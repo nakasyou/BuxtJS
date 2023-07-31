@@ -1,0 +1,10 @@
+{
+  "name": "luxt",
+  "description": "Luxt is Next-gen Web framework",
+  "license": "MIT",
+  "author": {
+    "name": "nakasyou",
+    "email": "nakasyou1103@gmail.com",
+    "url": "https://nakasyou.github.io"
+  }
+}
