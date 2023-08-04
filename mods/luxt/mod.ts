@@ -1,1 +1,1 @@
-export {}
+export * from "./src/app.ts"
