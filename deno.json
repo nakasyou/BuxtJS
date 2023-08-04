@@ -1,5 +1,10 @@
 {
   "imports": {
-    "luxt": "./mod/mod.ts"
+    "luxt": "./mod/mod.ts",
+    "luxt/": "./mod/"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "luxt/"
   }
 }
