@@ -4,7 +4,7 @@
     "luxt/": "./mod/"
   },
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react",
     "jsxImportSource": "luxt/mod/jsx.ts"
   }
 }
