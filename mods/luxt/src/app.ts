@@ -16,7 +16,7 @@ export interface AppInit {
 export class App {
   init: AppInit
   constructor (init: AppInit) {
-    this.init = AppInit
+    this.init = init
   }
   fetch (request: Request): Response {
     return new Response(jsx.renderToString(this.init.imports["./route.ts"]), {
