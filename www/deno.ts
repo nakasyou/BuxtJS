@@ -6,4 +6,4 @@ const app = new App({
   imports,
 })
 
-Deno.serve(app.fetch)
+Deno.serve(app.fetch.bind(app))

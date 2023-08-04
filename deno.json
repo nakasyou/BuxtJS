@@ -5,6 +5,10 @@
   },
   "compilerOptions": {
     "jsx": "react",
-    "jsxImportSource": "luxt/mod/jsx.ts"
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
+  },
+  "tasks": {
+    "www-dev": "deno run -A --unstable --watch www/deno.ts"
   }
 }
