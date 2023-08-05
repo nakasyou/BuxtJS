@@ -1,5 +1,5 @@
 import { defineRoute } from "luxt"
 
-defineRoute(c => {
-  return c.json(c.query())
+export default defineRoute(c => {
+  return c.json(c.req.query())
 })
