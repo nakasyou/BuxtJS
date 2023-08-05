@@ -7,7 +7,6 @@ export interface ReactIslandProps {
   Island: any
 }
 export const ReactIsland = (props: Props) => {
-  console.log(props.Island(), React.createElement("button", {},"count"))
   return (<>
     <div>Hello isLand!</div>
     <div id={`app-${Math.random()}`} dangerouslySetInnerHTML={{
