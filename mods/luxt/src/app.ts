@@ -23,8 +23,14 @@ function modulePathToPath (modulePath: string) {
   modulePath = modulePath.replace(/route\.(ts|tsx)$/, "")
     .replace(/\/$/, "") // 最後の/を削除
     .replace(/\[.+?\]/g, str => {
-      console.log(str)
-      return str
+      const dynamicPath = str.slice(1, -1)
+      if (dynamicPath[0]+dynamicPath[1]+dynamicPath[2] === "...") {
+        // 可変長のPath
+        const dynamicName = dynamicPath.slice(1, -1)
+        return `:${dynamicName}{.*?}`
+      } else {
+        return `:${dynamicPath}`
+      }
     })
   modulePath = "/" + modulePath
   return modulePath
