@@ -10,14 +10,14 @@ export const createImports = async (options: CreateImportsOptions) => {
   const absBasePath = path.resolve(options.basePath)
   const routeGlob = path.join(options.basePath, "app", "**", "route.{js,ts,jsx,tsx}")
   const getRoutesPromises: Promise<void> = []
+  const importSeqs: string[] = []
+  const outputSeqs: string[] = []
   let index = 0
   for await (const entry of fs.expandGlob(routeGlob)) {
     index += 1
     if (!entry.isFile) {
       continue
     }
-    const importSeqs: string[] = []
-    const outputSeqs: string[] = []
     getRoutesPromises.push((async () => {
       const relativePath = entry.path.replace(absBasePath, "")
       const relativeImportPath = path.join("..", relativePath)
