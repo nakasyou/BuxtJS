@@ -14,7 +14,8 @@ switch (args._[0]) {
   case "imports": {
     console.log("Creating imports.ts..")
     const basePath = args._[1] || "."
-    const configPath = path.resolve(Deno.cwd(), basePath, "luxt.config.ts")
+    const configPath = path.join(Deno.cwd(), basePath, "luxt.config.ts")
+    console.log(configPath)
     const config = (await import(configPath)).default
     await createImports({
       config,
