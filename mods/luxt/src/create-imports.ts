@@ -1,6 +1,6 @@
 import type { LuxtConfig } from "./config.ts"
 import * as fs from "std/fs/mod.ts"
-import * as path from "std/fs/mod.ts"
+import * as path from "std/path/mod.ts"
 
 export interface CreateImportsOptions {
   basePath: string
