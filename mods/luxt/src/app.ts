@@ -21,6 +21,7 @@ function modulePathToPath (modulePath: string) {
     modulePath = modulePath.replace("./", "")
   }
   modulePath = modulePath.replace(/route\.(ts|tsx)$/, "")
+    .replace(/\/$/, "") // 最後の/を削除
   modulePath = "/" + modulePath
   return modulePath
 }
@@ -32,7 +33,6 @@ export class App {
 
     const app = new Hono()
     for (const [path, route] of Object.entries(this.init.config.imports)) {
-      console.log(path, modulePathToPath(path))
       app.all(modulePathToPath(path), async ctx => {
         const routeResult = await route(ctx)
         if (routeResult instanceof Response) {
