@@ -1,5 +1,5 @@
 import { defineRoute } from "luxt"
-import * as path from "std/fs/mod.ts"
+import * as path from "std/path/mod.ts"
 
 export default defineRoute(async (c) => {
   const pathParam = c.req.param("path")
