@@ -22,6 +22,10 @@ function modulePathToPath (modulePath: string) {
   }
   modulePath = modulePath.replace(/route\.(ts|tsx)$/, "")
     .replace(/\/$/, "") // 最後の/を削除
+    .replace(/\[.+?\]/g, str => {
+      console.log(str)
+      return str
+    })
   modulePath = "/" + modulePath
   return modulePath
 }
