@@ -4,7 +4,11 @@
 import React, { useState } from "https://esm.sh/react@18.2.0"
 
 export default () => {
-  return <button>
-    Dount
+  const [counter, setCounter] = useState(0)
+  
+  return <button onClick={() => {
+    setCounter(counter+1)
+  }}>
+    Count: {counter}
   </button>
 }
