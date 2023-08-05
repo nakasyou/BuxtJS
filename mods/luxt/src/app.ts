@@ -26,7 +26,7 @@ function modulePathToPath (modulePath: string) {
       const dynamicPath = str.slice(1, -1)
       if (dynamicPath[0]+dynamicPath[1]+dynamicPath[2] === "...") {
         // 可変長のPath
-        const dynamicName = dynamicPath.slice(1, -1)
+        const dynamicName = dynamicPath.slice(2)
         return `:${dynamicName}{.*?}`
       } else {
         return `:${dynamicPath}`
