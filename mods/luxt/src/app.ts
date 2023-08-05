@@ -31,7 +31,7 @@ export class App {
     this.init = init
 
     const app = new Hono()
-    for (const [path, route] of Object.entries(this.init.LuxtConfig.imports)) {
+    for (const [path, route] of Object.entries(this.init.config.imports)) {
       app.all(modulePathToPath(path), async ctx => {
         const routeResult = await route(ctx)
         if (routeResult instanceof Response) {
