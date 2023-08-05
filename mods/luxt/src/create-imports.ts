@@ -6,13 +6,27 @@ export interface CreateImportsOptions {
   basePath: string
   config: LuxtConfig
 }
+interface RouteData {
+  importSeq: string
+  exportSeq: string
+}
 export const createImports = async (options: CreateImportsOptions) => {
+  const absBasePath = path.resolve(options.basePath)
   const routeGlob = path.join(options.basePath, "app", "**", "route.{js,ts,jsx,tsx}")
-  const getRoutesPromises: Promise<void> = []
+  const getRoutesPromises: Promise<> = []
+  let index = 0
   for await (const entry of fs.expandGlob(routeGlob)) {
+    index += 1
+    if (!entry.isFile) {
+      continue
+    }
     getRoutesPromises.push((async () => {
-      console.log(entry)
+      const relativeImportPath = entry.path.replace(absBasePath, "")
+      console.log(relativeImportPath)
+      return {
+        importSeq: ``
+      }
     })())
   }
-  await Promise.all(getRoutesPromises)
+  console.log(await Promise.all(getRoutesPromises))
 }
