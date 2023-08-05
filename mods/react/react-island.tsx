@@ -1,7 +1,7 @@
 // luxt/react.ts
 import { h, Fragment } from "luxt/jsx.ts"
 import { renderToString } from 'https://esm.sh/react-dom@18.2.0/server'
-import React from 'https://esm.sh/react-dom'
+import React from 'https://esm.sh/react'
 
 export interface ReactIslandProps {
   Island: any
