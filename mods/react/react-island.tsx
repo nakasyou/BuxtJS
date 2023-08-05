@@ -11,7 +11,7 @@ export const ReactIsland = (props: Props) => {
   return (<>
     <div>Hello isLand!</div>
     <div id={`app-${Math.random()}`}>
-      { renderToString(createElement('div',{},'hello')) }
+      { renderToString(React.createElement('div',{},'hello')) }
     </div>
   </>)
 }
