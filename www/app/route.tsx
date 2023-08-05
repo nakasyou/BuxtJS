@@ -4,7 +4,7 @@ import { h, Fragment } from "luxt/jsx.ts"
 export default defineRoute((c) => {
   if (c.req.header('User-Agent').includes("Deno")) {
     // isDeno
-    return c.redirect('/mod')
+    return c.redirect('/cli')
   }
   return <html>
     <head>
