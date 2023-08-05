@@ -15,7 +15,6 @@ switch (args._[0]) {
     console.log("Creating imports.ts..")
     const basePath = args._[1] || "."
     const configPath = path.join(Deno.cwd(), basePath, "luxt.config.ts")
-    console.log(configPath)
     const config = (await import(configPath)).default
     await createImports({
       config,
@@ -26,4 +25,3 @@ switch (args._[0]) {
   default:
     console.log("hello!")
 }
-import config from "./www/luxt.config.ts"
