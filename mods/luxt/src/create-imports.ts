@@ -26,7 +26,7 @@ export const createImports = async (options: CreateImportsOptions) => {
       
       return {
         importSeq: `import $${index} from '${relativeImportPath.replaceAll("\\", "/")}'`,
-        outputSeq: `${relativePath.replaceAll("\\", "/")}`
+        outputSeq: `${relativePath.replaceAll("\\", "/").replace(/^(\/)?app/,".")}`
       }
     })())
   }
