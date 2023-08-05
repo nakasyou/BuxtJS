@@ -1,5 +1,6 @@
 import { Hono } from "https://deno.land/x/hono@v3.3.4/mod.ts"
 import { jsx } from "../deps.ts"
+import { type LuxtConfig } from "./config.ts"
 
 export interface Context {
   
@@ -13,7 +14,7 @@ export type Router = (ctx: Context) => RouterResponse | Promise<RouterResponse>
 export const defineRoute = (router: Router) => router
 
 export interface AppInit {
-  imports: Record<string, Router>
+  config: LuxtConfig
 }
 function modulePathToPath (modulePath: string) {
   if (modulePath.slice(0,2) === "./") {
@@ -30,7 +31,7 @@ export class App {
     this.init = init
 
     const app = new Hono()
-    for (const [path, route] of Object.entries(this.init.imports)) {
+    for (const [path, route] of Object.entries(this.init.LuxtConfig.imports)) {
       app.all(modulePathToPath(path), async ctx => {
         const routeResult = await route(ctx)
         if (routeResult instanceof Response) {
