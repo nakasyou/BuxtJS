@@ -11,7 +11,7 @@ interface Options {
   args: string[]
   config: object
 }
-export const cli = (options: Options) => {
+export const cli = async (options: Options) => {
   const args = flags.parse(options.args)
 
   switch (args._[0]) {
