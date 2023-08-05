@@ -9,7 +9,7 @@ export default defineRoute((c) => {
       <meta charset="utf-8" />
     </head>
     <body>
-      <ReactIsland island={App} />
+      <ReactIsland Island={App} />
     </body>
   </html>
 })
