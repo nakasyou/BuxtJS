@@ -30,6 +30,11 @@ export const createImports = async (options: CreateImportsOptions) => {
   const importsTypeScript = `// 編集しないことをおすすめするよ♡
 // You should not edit♡
 
-${importSeqs.join("\n")}`
+${importSeqs.join("\n")}
+
+export default {
+  ${outputSeqs.map(seq => "  " + seq).join("\n")}
+}
+`
   console.log(importsTypeScript)
 }
