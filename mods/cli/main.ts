@@ -6,7 +6,7 @@ import {
 } from "../deps.ts"
 import {
   createImports,
-} from ".../luxt/src/create-imports.ts"
+} from "../luxt/src/create-imports.ts"
 
 const args = flags.parse(Deno.args)
 
