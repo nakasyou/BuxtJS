@@ -8,5 +8,5 @@ export default () => {
   const click = () => {
     setCounter(counter+1)
   }
-  return <button>Count</button>
+  return React.createElement("a")
 }
