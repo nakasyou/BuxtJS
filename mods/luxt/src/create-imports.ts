@@ -21,10 +21,10 @@ export const createImports = async (options: CreateImportsOptions) => {
       continue
     }
     getRoutesPromises.push((async () => {
-      const relativeImportPath = entry.path.replace(absBasePath, "")
-      console.log(relativeImportPath)
+      const relativeImportPath = path.join("..", entry.path.replace(absBasePath, ""))
+      
       return {
-        importSeq: ``
+        importSeq: `import $${index} from '${relativeImportPath.replace("\\", "/")}'`,
       }
     })())
   }
