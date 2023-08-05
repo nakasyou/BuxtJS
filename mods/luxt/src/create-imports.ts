@@ -33,8 +33,8 @@ export const createImports = async (options: CreateImportsOptions) => {
 ${importSeqs.join("\n")}
 
 export default {
-  ${outputSeqs.map(seq => "  " + seq).join("\n")}
+${outputSeqs.map(seq => "  " + seq).join("\n")}
 }
 `
-  console.log(importsTypeScript)
+  await Deno.writeTextFile(path.join(options.basePath, ".luxt", "imports.ts"), importsTypeScript)
 }
