@@ -1,5 +1,5 @@
 import config from "./luxt.config.ts"
-import { cli } from "luxt/cli/mod.ts"
+import { cli } from "luxt/cli.ts"
 
 cli({
   args: Deno.args,
