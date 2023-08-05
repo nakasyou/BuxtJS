@@ -1,1 +1,28 @@
-console.log("Luxt cli!!")
+import {
+  flags
+} from "./deps.ts"
+import {
+  path
+} from "../deps.ts"
+import {
+  createImports,
+} from ".../luxt/src/create-imports.ts"
+
+const args = flags.parse(Deno.args)
+
+switch (args._[0]) {
+  case "imports": {
+    console.log("Creating imports.ts..")
+    const basePath = args._[1] || "."
+    const configPath = path.join(basePath, "luxt.config.ts")
+    const config = (await import(configPath)).default
+    await createImports({
+      config,
+      basePath,
+    })
+    break
+  }
+  default:
+    console.log("hello!")
+}
+import config from "./www/luxt.config.ts"
