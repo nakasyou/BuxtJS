@@ -1,5 +1,10 @@
-import $0 from "../app/route.tsx"
+// 編集しないことをおすすめするよ♡
+// You should not edit♡
+
+import $1 from '../app/api/route.tsx'
+import $2 from '../app/route.tsx'
 
 export default {
-  "./route.tsx": $0,
+  './api/route.tsx': $1,
+  './route.tsx': $2,
 }
