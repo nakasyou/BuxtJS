@@ -5,7 +5,7 @@ export interface ReactIslandProps {
   island: any
 }
 export const ReactIsland = (props: Props) => {
-  return <>
+  return (<>
     <div>Hello isLand!</div>
-  </>
+  </>)
 }
