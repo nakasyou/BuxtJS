@@ -8,7 +8,7 @@ export interface CreateImportsOptions {
 }
 interface RouteData {
   importSeq: string
-  exportSeq: string
+  outputSeq: string
 }
 export const createImports = async (options: CreateImportsOptions) => {
   const absBasePath = path.resolve(options.basePath)
@@ -21,10 +21,12 @@ export const createImports = async (options: CreateImportsOptions) => {
       continue
     }
     getRoutesPromises.push((async () => {
-      const relativeImportPath = path.join("..", entry.path.replace(absBasePath, ""))
+      const relativePath = entry.path.replace(absBasePath, "")
+      const relativeImportPath = path.join("..", relativePath)
       
       return {
-        importSeq: `import $${index} from '${relativeImportPath.replace("\\", "/")}'`,
+        importSeq: `import $${index} from '${relativeImportPath.replaceAll("\\", "/")}'`,
+        outputSeq: `${relativePath.replaceAll("\\", "/")}`
       }
     })())
   }
