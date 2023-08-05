@@ -6,29 +6,30 @@ export interface CreateImportsOptions {
   basePath: string
   config: LuxtConfig
 }
-interface RouteData {
-  importSeq: string
-  outputSeq: string
-}
 export const createImports = async (options: CreateImportsOptions) => {
   const absBasePath = path.resolve(options.basePath)
   const routeGlob = path.join(options.basePath, "app", "**", "route.{js,ts,jsx,tsx}")
-  const getRoutesPromises: Promise<> = []
+  const getRoutesPromises: Promise<void> = []
   let index = 0
   for await (const entry of fs.expandGlob(routeGlob)) {
     index += 1
     if (!entry.isFile) {
       continue
     }
+    const importSeqs: string[] = []
+    const outputSeqs: string[] = []
     getRoutesPromises.push((async () => {
       const relativePath = entry.path.replace(absBasePath, "")
       const relativeImportPath = path.join("..", relativePath)
-      
-      return {
-        importSeq: `import $${index} from '${relativeImportPath.replaceAll("\\", "/")}'`,
-        outputSeq: `'${relativePath.replaceAll("\\", "/").replace(/^(\/)?app/,".")}': $${index},`
-      }
+
+      importSeqs.push(`import $${index} from '${relativeImportPath.replaceAll("\\", "/")}'`)
+      outputSeqs.push(`'${relativePath.replaceAll("\\", "/").replace(/^(\/)?app/,".")}': $${index},`)
     })())
   }
-  console.log(await Promise.all(getRoutesPromises))
+  await Promise.all(getRoutesPromises)
+  const importsTypeScript = `// 編集しないことをおすすめするよ♡
+// You should not edit♡
+
+${imports.join("\n")}`
+  console.log(importsTypeScript)
 }
