@@ -4,6 +4,7 @@
     "https://deno.land/std@0.197.0/_util/os.ts": "d932f56d41e4f6a6093d56044e29ce637f8dcc43c5a90af43504a889cf1775e3",
     "https://deno.land/std@0.197.0/assert/assert.ts": "9a97dad6d98c238938e7540736b826440ad8c1c1e54430ca4c4e623e585607ee",
     "https://deno.land/std@0.197.0/assert/assertion_error.ts": "4d0bde9b374dfbcbe8ac23f54f567b77024fb67dbb1906a852d67fe050d42f56",
+    "https://deno.land/std@0.197.0/flags/mod.ts": "a5ac18af6583404f21ea03771f8816669d901e0ff4374020870334d6f61d73d5",
     "https://deno.land/std@0.197.0/fs/_util.ts": "fbf57dcdc9f7bc8128d60301eece608246971a7836a3bb1e78da75314f08b978",
     "https://deno.land/std@0.197.0/fs/copy.ts": "b4f7fe87190d7b310c88a2d9ff845210c0a2b7b0a094ec509747359023beb7d6",
     "https://deno.land/std@0.197.0/fs/empty_dir.ts": "c3d2da4c7352fab1cf144a1ecfef58090769e8af633678e0f3fabaef98594688",

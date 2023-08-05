@@ -10,6 +10,7 @@
     "jsxFragmentFactory": "Fragment"
   },
   "tasks": {
-    "www-dev": "deno run -A --unstable --watch www/deno.ts"
+    "www:dev": "deno run -A --unstable --watch www/deno.ts",
+    "www:cli":"deno run -A www/cli.ts" 
   }
 }
