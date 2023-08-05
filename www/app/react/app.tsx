@@ -8,9 +8,7 @@ export default () => {
   const click = () => {
     setCounter(counter+1)
   }
-  return <>
-    <button onClick={click}>
+  return <button onClick={click}>
       Count is {counter}
     </button>
-  </>
 }
