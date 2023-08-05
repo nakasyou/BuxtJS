@@ -1,7 +1,7 @@
 import config from "./luxt.config.ts"
 import { cli } from "luxt/cli.ts"
 
-cli({
+await cli({
   args: Deno.args,
   config,
 })
