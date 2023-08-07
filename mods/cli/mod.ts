@@ -4,11 +4,8 @@ import {
 import {
   path
 } from "../deps.ts"
-import {
-  createImports,
-} from "../luxt/src/create-imports.ts"
-
 import createImportsCommand from "./commands/imports.ts"
+import buildCommand from "./commands/build.ts"
 
 export interface CliCommandInit {
   args: flag.Args
@@ -32,9 +29,12 @@ export const cli = async (options: Options) => {
     projectRoot: options.projectRoot,
   }
   switch (args._[0]) {
-    case "imports": {
+    case "imports":
       await createImportsCommand(commandInit)
-    }
+      break
+    case "build":
+      await buildCommand(commandInit)
+      break
     default:
       console.log("hello!")
   }
