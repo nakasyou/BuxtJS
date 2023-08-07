@@ -1,7 +1,8 @@
 {
   "imports": {
     "luxt": "./mod/mod.ts",
-    "luxt/": "./mod/"
+    "luxt/": "./mod/",
+    "std/": "https://deno.land/std/"
   },
   "compilerOptions": {
     "jsx": "react",
