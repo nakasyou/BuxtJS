@@ -1,3 +1,1 @@
-export {
-  jsx
-} from "../deps.ts"
+export * from "../jsx.ts"
