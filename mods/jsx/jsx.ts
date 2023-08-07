@@ -106,7 +106,7 @@ const emptyTags = [
  * // → { headStrings: [] }
  * ```
  */
-export const renderToString = async (element: JSX.Element | JSX.Element[], luxtData: LuxtJSXLuxtData): string => {
+export const renderToString = async (element: JSX.Element | JSX.Element[], luxtData: LuxtJSXLuxtData): Promise<string> => {
   if (element instanceof Array) {
     // これがNodeの集合である
     return (await Promise.all(element.map(async (node: NodeLike) => {
