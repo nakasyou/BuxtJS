@@ -1,5 +1,16 @@
-import $0 from "../app/route.tsx"
+// 編集しないことをおすすめするよ♡
+// You should not edit♡
+
+import $1 from '../app/api/route.tsx'
+import $2 from '../app/cli/[...path]/route.ts'
+import $3 from '../app/mod/route.ts'
+import $4 from '../app/react/route.tsx'
+import $5 from '../app/route.tsx'
 
 export default {
-  "./route.tsx": $0,
+  './api/route.tsx': $1,
+  './cli/[...path]/route.ts': $2,
+  './mod/route.ts': $3,
+  './react/route.tsx': $4,
+  './route.tsx': $5,
 }

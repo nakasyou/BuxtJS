@@ -2,7 +2,7 @@
   "imports": {
     "luxt": "./mod/mod.ts",
     "luxt/": "./mod/",
-    "std/": "https://deno.land/std/"
+    "std/": "https://deno.land/std@0.197.0/"
   },
   "compilerOptions": {
     "jsx": "react",
@@ -10,6 +10,7 @@
     "jsxFragmentFactory": "Fragment"
   },
   "tasks": {
-    "www-dev": "deno run -A --unstable --watch www/deno.ts"
+    "www:dev": "deno run -A --unstable --watch www/deno.ts",
+    "www:cli":"deno run -A www/cli.ts" 
   }
 }
