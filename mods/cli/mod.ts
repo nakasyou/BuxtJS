@@ -10,6 +10,14 @@ import {
 
 import createImportsCommand from "./commands/imports.ts"
 
+export interface CliCommandInit {
+  args: flag.Args
+  config: object
+  projectRoot: string
+}
+export type CliCommand = (init: CliCommandInit) => void | Promise<void>
+export const defineCliCommand = (command: CliCommand): CliCommand => command
+
 interface Options {
   args: string[]
   config: object
@@ -32,10 +40,3 @@ export const cli = async (options: Options) => {
   }
 }
 
-export interface CliCommandInit {
-  args: flag.Args
-  config: object
-  projectRoot: string
-}
-export type CliCommand = (init: CliCommandInit) => void | Promise<void>
-export const defineCliCommand = (command: CliCommand): CliCommand => command
