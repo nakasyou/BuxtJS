@@ -21,7 +21,7 @@ function modulePathToPath (modulePath: string) {
     modulePath = modulePath.replace("./", "")
   }
   console.log(modulePath, modulePath.replace(/\.route$/,""))
-  modulePath = modulePath.replace(/\.route$/,"")
+  modulePath = modulePath.replace(/\route$/,"")
     .replace(/\/$/, "") // 最後の/を削除
     .replace(/\[.+?\]/g, str => {
       const dynamicPath = str.slice(1, -1)
