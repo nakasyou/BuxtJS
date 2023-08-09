@@ -1,7 +1,12 @@
 import type { Imports } from "../types/route.ts"
 import { unplugin } from "../deps.ts"
 
-export type LuxtPlugin = (...args: any[]) => unplugin.UnpluginInstance
+export type LuxtPlugin = (...args: any[]) => {
+  unplugin: unplugin.UnpluginInstance,
+  luxt: {
+    
+  }
+}
 
 export interface LuxtConfig {
   imports: Imports
