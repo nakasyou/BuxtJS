@@ -20,7 +20,7 @@ function modulePathToPath (modulePath: string) {
   if (modulePath.slice(0,2) === "./") {
     modulePath = modulePath.replace("./", "")
   }
-  modulePath = modulePath.replace(/route\.(ts|tsx)$/, "")
+  modulePath = modulePath.replace(/\.route$/,"")
     .replace(/\/$/, "") // 最後の/を削除
     .replace(/\[.+?\]/g, str => {
       const dynamicPath = str.slice(1, -1)
