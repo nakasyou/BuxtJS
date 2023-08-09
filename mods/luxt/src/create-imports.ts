@@ -22,7 +22,7 @@ export const createImports = async (options: CreateImportsOptions) => {
       const relativeImportPath = path.join("..", relativePath)
 
       importSeqs.push(`import $${index} from '${relativeImportPath.replaceAll("\\", "/")}'`)
-      outputSeqs.push(`'${relativePath.replaceAll("\\", "/").replace(/^(\/)?app/,".")}': $${index},`)
+      outputSeqs.push(`'${relativePath.replaceAll("\\", "/").replace(/^(\/)?app/,".").replace(/\.(js|jsx|ts|tsx)$/,"")}': $${index},`)
     })())
   }
   await Promise.all(getRoutesPromises)
